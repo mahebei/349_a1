@@ -39,11 +39,33 @@ Vagrant.configure("2") do |config|
       echo "GRANT ALL PRIVILEGES ON fvision.* TO 'webuser'@'%'" | mysql
       
       export MYSQL_PWD='insecure_db_pw'
-      cat /vagrant/setup-database.sql | mysql -u webuser fvision
+      cat /vagrant/setup-city-database.sql | mysql -u webuser fvision
 
       sed -i'' -e '/bind-address/s/127.0.0.1/0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
       service mysql restart
     SHELL
   end
 
+  config.vm.define "userserver" do |userserver|
+    userserver.vm.hostname = "userserver"
+    userserver.vm.network "private_network", ip: "192.168.2.13"
+
+    userserver.vm.provision "shell", inline: <<-SHELL
+      apt-get update
+      
+      export MYSQL_PWD='insecure_mysqlroot_pw'
+      echo "mysql-server mysql-server/root_password password $MYSQL_PWD" | debconf-set-selections 
+      echo "mysql-server mysql-server/root_password_again password $MYSQL_PWD" | debconf-set-selections
+      apt-get -y install mysql-server
+      echo "CREATE DATABASE fvision;" | mysql
+      echo "CREATE USER 'webuser'@'%' IDENTIFIED BY 'insecure_db_pw';" | mysql
+      echo "GRANT ALL PRIVILEGES ON fvision.* TO 'webuser'@'%'" | mysql
+      
+      export MYSQL_PWD='insecure_db_pw'
+      cat /vagrant/setup-user-database.sql | mysql -u webuser fvision
+
+      sed -i'' -e '/bind-address/s/127.0.0.1/0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
+      service mysql restart
+    SHELL
+  end
 end
