@@ -1,8 +1,88 @@
-CREATE TABLE papers (
-  code varchar(7),
-  name varchar(50) NOT NULL,
-  PRIMARY KEY (code)
+CREATE TABLE timezones (
+  city varchar(80),
+  timezone decimal(4, 2) NOT NULL,
+  PRIMARY KEY (city)
 );
 
-INSERT INTO papers VALUES ('COSC326','Effective Programming');
-INSERT INTO papers VALUES ('COSC349','Cloud Computing Architecture');
+INSERT INTO timezones VALUES ('International Date Line West', -12);
+INSERT INTO timezones VALUES ('Midway Island, Samoa', -11);
+INSERT INTO timezones VALUES ('Hawaii', -10);
+INSERT INTO timezones VALUES ('Alaska', -9);
+INSERT INTO timezones VALUES ('Pacific Time (US & Canada)', -8);
+INSERT INTO timezones VALUES ('Tijuana, Baja California', -8);
+INSERT INTO timezones VALUES ('Arizona', -7);
+INSERT INTO timezones VALUES ('Chihuahua, La Paz, Mazatlan', -7);
+INSERT INTO timezones VALUES ('Mountain Time (US & Canada)', -7);
+INSERT INTO timezones VALUES ('Central America', -6);
+INSERT INTO timezones VALUES ('Central Time (US & Canada)', -6);
+INSERT INTO timezones VALUES ('Guadalajara, Mexico City, Monterrey', -6);
+INSERT INTO timezones VALUES ('Saskatchewan', -6);
+INSERT INTO timezones VALUES ('Bogota, Lima, Quito, Rio Branco', -5);
+INSERT INTO timezones VALUES ('Eastern Time (US & Canada)', -5);
+INSERT INTO timezones VALUES ('Indiana (East)', -5);
+INSERT INTO timezones VALUES ('Atlantic Time (Canada)', -4);
+INSERT INTO timezones VALUES ('Caracas, La Paz', -4);
+INSERT INTO timezones VALUES ('Manaus', -4);
+INSERT INTO timezones VALUES ('Santiago', -4);
+INSERT INTO timezones VALUES ('Newfoundland', -3.5);
+INSERT INTO timezones VALUES ('Brasilia', -3);
+INSERT INTO timezones VALUES ('Buenos Aires, Georgetown', -3);
+INSERT INTO timezones VALUES ('Greenland', -3);
+INSERT INTO timezones VALUES ('Montevideo', -3);
+INSERT INTO timezones VALUES ('Mid-Atlantic', -2);
+INSERT INTO timezones VALUES ('Cape Verde Is.', -1);
+INSERT INTO timezones VALUES ('Azores', -1);
+INSERT INTO timezones VALUES ('Casablanca, Monrovia, Reykjavik', 0);
+INSERT INTO timezones VALUES ('GMT: Dublin, Edinburgh, Lisbon, London', 0);
+INSERT INTO timezones VALUES ('Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna', 1);
+INSERT INTO timezones VALUES ('Belgrade, Bratislava, Budapest, Ljubljana, Prague', 1);
+INSERT INTO timezones VALUES ('Brussels, Copenhagen, Madrid, Paris', 1);
+INSERT INTO timezones VALUES ('Sarajevo, Skopje, Warsaw, Zagreb', 1);
+INSERT INTO timezones VALUES ('West Central Africa', 1);
+INSERT INTO timezones VALUES ('Amman', 2);
+INSERT INTO timezones VALUES ('Athens, Bucharest, Istanbul', 2);
+INSERT INTO timezones VALUES ('Beirut', 2);
+INSERT INTO timezones VALUES ('Cairo', 2);
+INSERT INTO timezones VALUES ('Harare, Pretoria', 2);
+INSERT INTO timezones VALUES ('Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius', 2);
+INSERT INTO timezones VALUES ('Jerusalem', 2);
+INSERT INTO timezones VALUES ('Minsk', 2);
+INSERT INTO timezones VALUES ('Windhoek', 2);
+INSERT INTO timezones VALUES ('Kuwait, Riyadh, Baghdad', 3);
+INSERT INTO timezones VALUES ('Moscow, St. Petersburg, Volgograd', 3);
+INSERT INTO timezones VALUES ('Nairobi', 3);
+INSERT INTO timezones VALUES ('Tbilisi', 3);
+INSERT INTO timezones VALUES ('Tehran', 3.5);
+INSERT INTO timezones VALUES ('Abu Dhabi, Muscat', 4);
+INSERT INTO timezones VALUES ('Baku', 4);
+INSERT INTO timezones VALUES ('Yerevan', 4);
+INSERT INTO timezones VALUES ('Kabul', 4.5);
+INSERT INTO timezones VALUES ('Yekaterinburg', 5);
+INSERT INTO timezones VALUES ('Islamabad, Karachi, Tashkent', 5);
+INSERT INTO timezones VALUES ('Sri Jayawardenapura', 5.5);
+INSERT INTO timezones VALUES ('Chennai, Kolkata, Mumbai, New Delhi', 5.5);
+INSERT INTO timezones VALUES ('Kathmandu', 5.75);
+INSERT INTO timezones VALUES ('Almaty, Novosibirsk', 6);
+INSERT INTO timezones VALUES ('Astana, Dhaka', 6);
+INSERT INTO timezones VALUES ('Yangon (Rangoon)', 6.5);
+INSERT INTO timezones VALUES ('Bangkok, Hanoi, Jakarta', 7);
+INSERT INTO timezones VALUES ('Krasnoyarsk', 7);
+INSERT INTO timezones VALUES ('Beijing, Chongqing, Hong Kong, Urumqi', 8);
+INSERT INTO timezones VALUES ('Kuala Lumpur, Singapore', 8);
+INSERT INTO timezones VALUES ('Irkutsk, Ulaan Bataar', 8);
+INSERT INTO timezones VALUES ('Perth', 8);
+INSERT INTO timezones VALUES ('Taipei', 8);
+INSERT INTO timezones VALUES ('Osaka, Sapporo, Tokyo', 9);
+INSERT INTO timezones VALUES ('Seoul', 9);
+INSERT INTO timezones VALUES ('Yakutsk', 9);
+INSERT INTO timezones VALUES ('Adelaide', 9.5);
+INSERT INTO timezones VALUES ('Darwin', 9.5);
+INSERT INTO timezones VALUES ('Brisbane', 10);
+INSERT INTO timezones VALUES ('Canberra, Melbourne, Sydney', 10);
+INSERT INTO timezones VALUES ('Hobart', 10);
+INSERT INTO timezones VALUES ('Guam, Port Moresby', 10);
+INSERT INTO timezones VALUES ('Vladivostok', 10);
+INSERT INTO timezones VALUES ('Magadan, Solomon Is., New Caledonia', 11);
+INSERT INTO timezones VALUES ('Auckland, Wellington', 12);
+INSERT INTO timezones VALUES ('Fiji, Kamchatka, Marshall Is.', 12);
+INSERT INTO timezones VALUES ('Nuku\'alofa', 13);
