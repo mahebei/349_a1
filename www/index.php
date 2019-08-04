@@ -429,14 +429,15 @@ echo date('H:i', $to - $from + $time);
 <table border="1">
     <tr>
         <th>City</th>
-        <th>Time Zone</th>
+        <th>Hour</th>
+        <th>Minute</th>
     </tr>
 	<?php
 	$city = 'Alaska';
-	$q = $pdo->query("SELECT * FROM timezones");
+	$q = $pdo->query("SELECT * FROM zone");
 
 	while ($row = $q->fetch()) {
-		echo "<tr><td>" . $row["city"] . "</td><td>" . $row["timezone"] . "</td></tr>\n";
+		echo "<tr><td>" . $row["city"] . "</td><td>" . $row["hour"] . "</td><td>" . $row["minute"] . "</td></tr>\n";
 		//echo "<tr><td>" . $row["timezone"] . "</td></tr>\n";
 	}
 	?>
@@ -444,3 +445,4 @@ echo date('H:i', $to - $from + $time);
 
 </body>
 </html>
+
