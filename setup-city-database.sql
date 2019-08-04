@@ -1,7 +1,7 @@
 CREATE TABLE zone (   
 	city varchar(80),   
 	hour number not null, 
-	min number not null,
+	minute number not null,
 	primary key(city)
 );
 
