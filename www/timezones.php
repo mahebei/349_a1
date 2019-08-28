@@ -62,13 +62,6 @@ if ($_GET['from']) {
 ?>
 
 <form method="get">
-
-<!--    <p>-->
-<!--        <label for="test">test</label>-->
-<!--        <select name="test" id="test">-->
-<!---->
-<!--        </select>-->
-<!--    </p>-->
     <input type="hidden" name="uName" value="<?php echo $_GET['uName'] ?>">
     <p>
         <label for="from">From</label>
@@ -99,92 +92,28 @@ if ($_GET['from']) {
     <p>
         <label for="">Time</label>
         <select name="hour" id="hour">
-            <option<?php if ($hour === '00') echo ' selected'; ?>>00</option>
-            <option<?php if ($hour === '01') echo ' selected'; ?>>01</option>
-            <option<?php if ($hour === '02') echo ' selected'; ?>>02</option>
-            <option<?php if ($hour === '03') echo ' selected'; ?>>03</option>
-            <option<?php if ($hour === '04') echo ' selected'; ?>>04</option>
-            <option<?php if ($hour === '05') echo ' selected'; ?>>05</option>
-            <option<?php if ($hour === '06') echo ' selected'; ?>>06</option>
-            <option<?php if ($hour === '07') echo ' selected'; ?>>07</option>
-            <option<?php if ($hour === '08') echo ' selected'; ?>>08</option>
-            <option<?php if ($hour === '09') echo ' selected'; ?>>09</option>
-            <option<?php if ($hour === '10') echo ' selected'; ?>>10</option>
-            <option<?php if ($hour === '11') echo ' selected'; ?>>11</option>
-            <option<?php if ($hour === '12') echo ' selected'; ?>>12</option>
-            <option<?php if ($hour === '13') echo ' selected'; ?>>13</option>
-            <option<?php if ($hour === '14') echo ' selected'; ?>>14</option>
-            <option<?php if ($hour === '15') echo ' selected'; ?>>15</option>
-            <option<?php if ($hour === '16') echo ' selected'; ?>>16</option>
-            <option<?php if ($hour === '17') echo ' selected'; ?>>17</option>
-            <option<?php if ($hour === '18') echo ' selected'; ?>>18</option>
-            <option<?php if ($hour === '19') echo ' selected'; ?>>19</option>
-            <option<?php if ($hour === '20') echo ' selected'; ?>>20</option>
-            <option<?php if ($hour === '21') echo ' selected'; ?>>21</option>
-            <option<?php if ($hour === '22') echo ' selected'; ?>>22</option>
-            <option<?php if ($hour === '23') echo ' selected'; ?>>23</option>
+			<?php
+			for ($x = 0; $x < 24; $x++) {
+				$curr = "";
+				if ($x < 10) $curr .= "0";
+				$curr .= $x;
+				echo "<option";
+				if ($hour === $curr) echo ' selected';
+				echo ">" . $curr . "</option>";
+			}
+			?>
         </select>&nbsp:
         <select name="min" id="min">
-            <option<?php if ($min === '00') echo ' selected'; ?>>00</option>
-            <option<?php if ($min === '01') echo ' selected'; ?>>01</option>
-            <option<?php if ($min === '02') echo ' selected'; ?>>02</option>
-            <option<?php if ($min === '03') echo ' selected'; ?>>03</option>
-            <option<?php if ($min === '04') echo ' selected'; ?>>04</option>
-            <option<?php if ($min === '05') echo ' selected'; ?>>05</option>
-            <option<?php if ($min === '06') echo ' selected'; ?>>06</option>
-            <option<?php if ($min === '07') echo ' selected'; ?>>07</option>
-            <option<?php if ($min === '08') echo ' selected'; ?>>08</option>
-            <option<?php if ($min === '09') echo ' selected'; ?>>09</option>
-            <option<?php if ($min === '10') echo ' selected'; ?>>10</option>
-            <option<?php if ($min === '11') echo ' selected'; ?>>11</option>
-            <option<?php if ($min === '12') echo ' selected'; ?>>12</option>
-            <option<?php if ($min === '13') echo ' selected'; ?>>13</option>
-            <option<?php if ($min === '14') echo ' selected'; ?>>14</option>
-            <option<?php if ($min === '15') echo ' selected'; ?>>15</option>
-            <option<?php if ($min === '16') echo ' selected'; ?>>16</option>
-            <option<?php if ($min === '17') echo ' selected'; ?>>17</option>
-            <option<?php if ($min === '18') echo ' selected'; ?>>18</option>
-            <option<?php if ($min === '19') echo ' selected'; ?>>19</option>
-            <option<?php if ($min === '20') echo ' selected'; ?>>20</option>
-            <option<?php if ($min === '21') echo ' selected'; ?>>21</option>
-            <option<?php if ($min === '22') echo ' selected'; ?>>22</option>
-            <option<?php if ($min === '23') echo ' selected'; ?>>23</option>
-            <option<?php if ($min === '24') echo ' selected'; ?>>24</option>
-            <option<?php if ($min === '25') echo ' selected'; ?>>25</option>
-            <option<?php if ($min === '26') echo ' selected'; ?>>26</option>
-            <option<?php if ($min === '27') echo ' selected'; ?>>27</option>
-            <option<?php if ($min === '28') echo ' selected'; ?>>28</option>
-            <option<?php if ($min === '29') echo ' selected'; ?>>29</option>
-            <option<?php if ($min === '30') echo ' selected'; ?>>30</option>
-            <option<?php if ($min === '31') echo ' selected'; ?>>31</option>
-            <option<?php if ($min === '32') echo ' selected'; ?>>32</option>
-            <option<?php if ($min === '33') echo ' selected'; ?>>33</option>
-            <option<?php if ($min === '34') echo ' selected'; ?>>34</option>
-            <option<?php if ($min === '35') echo ' selected'; ?>>35</option>
-            <option<?php if ($min === '36') echo ' selected'; ?>>36</option>
-            <option<?php if ($min === '37') echo ' selected'; ?>>37</option>
-            <option<?php if ($min === '38') echo ' selected'; ?>>38</option>
-            <option<?php if ($min === '39') echo ' selected'; ?>>39</option>
-            <option<?php if ($min === '40') echo ' selected'; ?>>40</option>
-            <option<?php if ($min === '41') echo ' selected'; ?>>41</option>
-            <option<?php if ($min === '42') echo ' selected'; ?>>42</option>
-            <option<?php if ($min === '43') echo ' selected'; ?>>43</option>
-            <option<?php if ($min === '44') echo ' selected'; ?>>44</option>
-            <option<?php if ($min === '45') echo ' selected'; ?>>45</option>
-            <option<?php if ($min === '46') echo ' selected'; ?>>46</option>
-            <option<?php if ($min === '47') echo ' selected'; ?>>47</option>
-            <option<?php if ($min === '48') echo ' selected'; ?>>48</option>
-            <option<?php if ($min === '49') echo ' selected'; ?>>49</option>
-            <option<?php if ($min === '50') echo ' selected'; ?>>50</option>
-            <option<?php if ($min === '51') echo ' selected'; ?>>51</option>
-            <option<?php if ($min === '52') echo ' selected'; ?>>52</option>
-            <option<?php if ($min === '53') echo ' selected'; ?>>53</option>
-            <option<?php if ($min === '54') echo ' selected'; ?>>54</option>
-            <option<?php if ($min === '55') echo ' selected'; ?>>55</option>
-            <option<?php if ($min === '56') echo ' selected'; ?>>56</option>
-            <option<?php if ($min === '57') echo ' selected'; ?>>57</option>
-            <option<?php if ($min === '58') echo ' selected'; ?>>58</option>
-            <option<?php if ($min === '59') echo ' selected'; ?>>59</option>
+			<?php
+			for ($x = 0; $x < 60; $x++) {
+				$curr = "";
+				if ($x < 10) $curr .= "0";
+				$curr .= $x;
+				echo "<option";
+				if ($min === $curr) echo ' selected';
+				echo ">" . $curr . "</option>";
+			}
+			?>
         </select>
     </p>
     <p>
