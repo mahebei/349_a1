@@ -55,7 +55,7 @@ if ($_GET['from']) {
 	$hour = $_GET['hour'];
 	$min = $_GET['min'];
 } else {
-	$hour = date("h");
+	$hour = date("H");
 	$min = date("i");
 }
 ?>
