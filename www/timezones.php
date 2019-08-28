@@ -17,28 +17,30 @@
     </style>
 </head>
 <body>
-<p>Users</p>
-<table border="1">
-    <tr>
-        <th>User Name</th>
-    </tr>
-	<?php
-	$db_host = '192.168.2.13';
-	$db_name = 'fvision';
-	$db_user = 'webuser';
-	$db_passwd = 'insecure_db_pw';
 
-	$pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
+<?php
 
-	$pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
+if ($_GET['uName']) {
+	$user_host = '192.168.2.13';
+	$user_name = 'fvision';
+	$user_user = 'webuser';
+	$user_passwd = 'insecure_db_pw';
+//mysql -h 192.168.2.13 -D fvision -u webuser -p
 
-	$q = $pdo->query("SELECT * FROM users");
+	$user_pdo_dsn = "mysql:host=$user_host;dbname=$user_name";
 
-	while ($row = $q->fetch()) {
-		echo "<tr><td>" . $row["uname"] . "</td></tr>";
-	}
-	?>
-</table>
+	$user_pdo = new PDO($user_pdo_dsn, $user_user, $user_passwd);
+	$q = $user_pdo->query("SELECT * FROM users WHERE uname = '" . $_GET['uName'] . "';");
+//	echo "<table><tr><th>User Name</th><th>From city</th><th>To city</th></tr>";
+	$row = $q->fetch();
+//	echo "<tr><td>" . $row["uname"] . "</td><td>" . $row["fromcity"] . "</td><td>" . $row["tocity"] . "</td></tr>";
+	$from = $row["fromcity"];
+	$to = $row["tocity"];
+	echo "Welcome, " . $row["uname"];
+}
+echo "</table>";
+?>
+
 <h1>Time Zone</h1>
 
 <?php
@@ -47,17 +49,20 @@ $db_name = 'fvision';
 $db_user = 'webuser';
 $db_passwd = 'insecure_db_pw';
 //mysql -h 192.168.2.12 -D fvision -u webuser -p
-$pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
+$db_pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
 
-$pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
+$db_pdo = new PDO($db_pdo_dsn, $db_user, $db_passwd);
 
-$from = $_GET['from'];
-$to = $_GET['to'];
-$hour = $_GET['hour'];
-$min = $_GET['min'];
+if ($_GET['from']) {
+	$from = $_GET['from'];
+	$to = $_GET['to'];
+	$hour = $_GET['hour'];
+	$min = $_GET['min'];
+}
 ?>
 
 <form method="get">
+    <input type="hidden" name="uName" value="<?php echo $_GET['uName'] ?>">
     <p>
         <label for="from">From</label>
         <select name="from" id="from">
@@ -409,20 +414,29 @@ $min = $_GET['min'];
         <button>Enter</button>
     </p>
 </form>
+
 <?php
-echo "<p>" . $from . "</p>";
-echo "<p>" . $to . "</p>";
-$toH = $pdo->query("SELECT hour FROM zone WHERE city = '$to'")->fetch()[0];
-$fromH = $pdo->query("SELECT hour FROM zone WHERE city = '$from'")->fetch()[0];
-$toM = $pdo->query("SELECT minute FROM zone WHERE city = '$to'")->fetch()[0];
-$fromM = $pdo->query("SELECT minute FROM zone WHERE city = '$from'")->fetch()[0];
-echo "<p>From: " . $fromH . ":" . $fromM . "</p>";
-echo "<p>To: " . $toH . ":" . $toM . "</p>";
-echo "<p>" . $hour . ":" . $min . "</p>";
-$to = mktime($toH, $toM, 0);
-$from = mktime($fromH, $fromM, 0);
-$time = mktime($hour, $min, 0);
-echo date('H:i', $to - $from + $time);
+if ($_GET['from']) {
+	$toH = $db_pdo->query("SELECT hour FROM zone WHERE city = '$to'")->fetch()[0];
+	$fromH = $db_pdo->query("SELECT hour FROM zone WHERE city = '$from'")->fetch()[0];
+	$toM = $db_pdo->query("SELECT minute FROM zone WHERE city = '$to'")->fetch()[0];
+	$fromM = $db_pdo->query("SELECT minute FROM zone WHERE city = '$from'")->fetch()[0];
+	echo "<p>" . $from . " UTC";
+	if ($fromH > 0) echo "+";
+	echo $fromH . ":" . $fromM;
+	if ($fromM === '0') echo "0";
+	echo "</p><p>Time: " . $hour . ":" . $min . "</p>";
+
+	echo "<p>" . $to . " UTC";
+	if ($toH >= 0) echo "+";
+	echo $toH . ":" . $toM;
+	if ($toM === '0') echo "0";
+	$to = mktime($toH, $toM, 0);
+	$from = mktime($fromH, $fromM, 0);
+	$time = mktime($hour, $min, 0);
+	echo "<p>Time: " . date('H:i', mktime($toH, $toM, 0) - mktime($fromH, $fromM, 0)
+			+ mktime($hour, $min, 0)) . "</p>";
+}
 ?>
 
 <p>Showing All Time Zones:</p>
@@ -433,16 +447,12 @@ echo date('H:i', $to - $from + $time);
         <th>Minute</th>
     </tr>
 	<?php
-	$city = 'Alaska';
-	$q = $pdo->query("SELECT * FROM zone");
+	$q = $db_pdo->query("SELECT * FROM zone");
 
 	while ($row = $q->fetch()) {
 		echo "<tr><td>" . $row["city"] . "</td><td>" . $row["hour"] . "</td><td>" . $row["minute"] . "</td></tr>\n";
-		//echo "<tr><td>" . $row["timezone"] . "</td></tr>\n";
 	}
 	?>
 </table>
-
 </body>
 </html>
-
