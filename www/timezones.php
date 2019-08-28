@@ -54,6 +54,9 @@ if ($_GET['from']) {
 	$to = $_GET['to'];
 	$hour = $_GET['hour'];
 	$min = $_GET['min'];
+} else {
+	$hour = date("h");
+	$min = date("i");
 }
 ?>
 <form method="get">
@@ -136,7 +139,7 @@ if ($_GET['from']) {
 	$time = mktime($hour, $min, 0);
 	echo "<p>Time: " . date('H:i', mktime($toH, $toM, 0) - mktime($fromH, $fromM, 0)
 			+ mktime($hour, $min, 0));
-    if ($toH - $fromH + $hour < 0) echo " -1 day";
+	if ($toH - $fromH + $hour < 0) echo " -1 day";
     elseif ($toH - $fromH + $hour >= 24) echo " +1 day";
 	echo "</p>";
 }
