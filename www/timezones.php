@@ -62,261 +62,38 @@ if ($_GET['from']) {
 ?>
 
 <form method="get">
+
+<!--    <p>-->
+<!--        <label for="test">test</label>-->
+<!--        <select name="test" id="test">-->
+<!---->
+<!--        </select>-->
+<!--    </p>-->
     <input type="hidden" name="uName" value="<?php echo $_GET['uName'] ?>">
     <p>
         <label for="from">From</label>
         <select name="from" id="from">
-            <option<?php if ($from === 'Abu Dhabi, Muscat') echo ' selected'; ?>>Abu Dhabi, Muscat</option>
-            <option<?php if ($from === 'Adelaide') echo ' selected'; ?>>Adelaide</option>
-            <option<?php if ($from === 'Alaska') echo ' selected'; ?>>Alaska</option>
-            <option<?php if ($from === 'Almaty, Novosibirsk') echo ' selected'; ?>>Almaty, Novosibirsk</option>
-            <option<?php if ($from === 'Amman') echo ' selected'; ?>>Amman</option>
-            <option<?php if ($from === 'Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna') echo ' selected'; ?>>
-                Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
-            </option>
-            <option<?php if ($from === 'Arizona') echo ' selected'; ?>>Arizona</option>
-            <option<?php if ($from === 'Astana, Dhaka') echo ' selected'; ?>>Astana, Dhaka</option>
-            <option<?php if ($from === 'Athens, Bucharest, Istanbul') echo ' selected'; ?>>Athens, Bucharest, Istanbul
-            </option>
-            <option<?php if ($from === 'Atlantic Time (Canada)') echo ' selected'; ?>>Atlantic Time (Canada)</option>
-            <option<?php if ($from === 'Auckland, Wellington') echo ' selected'; ?>>Auckland, Wellington</option>
-            <option<?php if ($from === 'Azores') echo ' selected'; ?>>Azores</option>
-            <option<?php if ($from === 'Baku') echo ' selected'; ?>>Baku</option>
-            <option<?php if ($from === 'Bangkok, Hanoi, Jakarta') echo ' selected'; ?>>Bangkok, Hanoi, Jakarta</option>
-            <option<?php if ($from === 'Beijing, Chongqing, Hong Kong, Urumqi') echo ' selected'; ?>>Beijing, Chongqing,
-                Hong Kong, Urumqi
-            </option>
-            <option<?php if ($from === 'Beirut') echo ' selected'; ?>>Beirut</option>
-            <option<?php if ($from === 'Belgrade, Bratislava, Budapest, Ljubljana, Prague') echo ' selected'; ?>>
-                Belgrade, Bratislava, Budapest, Ljubljana, Prague
-            </option>
-            <option<?php if ($from === 'Bogota, Lima, Quito, Rio Branco') echo ' selected'; ?>>Bogota, Lima, Quito, Rio
-                Branco
-            </option>
-            <option<?php if ($from === 'Brasilia') echo ' selected'; ?>>Brasilia</option>
-            <option<?php if ($from === 'Brisbane') echo ' selected'; ?>>Brisbane</option>
-            <option<?php if ($from === 'Brussels, Copenhagen, Madrid, Paris') echo ' selected'; ?>>Brussels, Copenhagen,
-                Madrid, Paris
-            </option>
-            <option<?php if ($from === 'Buenos Aires, Georgetown') echo ' selected'; ?>>Buenos Aires, Georgetown
-            </option>
-            <option<?php if ($from === 'Cairo') echo ' selected'; ?>>Cairo</option>
-            <option<?php if ($from === 'Canberra, Melbourne, Sydney') echo ' selected'; ?>>Canberra, Melbourne, Sydney
-            </option>
-            <option<?php if ($from === 'Cape Verde Is.') echo ' selected'; ?>>Cape Verde Is.</option>
-            <option<?php if ($from === 'Caracas, La Paz') echo ' selected'; ?>>Caracas, La Paz</option>
-            <option<?php if ($from === 'Casablanca, Monrovia, Reykjavik') echo ' selected'; ?>>Casablanca, Monrovia,
-                Reykjavik
-            </option>
-            <option<?php if ($from === 'Central America') echo ' selected'; ?>>Central America</option>
-            <option<?php if ($from === 'Central Time (US & Canada)') echo ' selected'; ?>>Central Time (US & Canada)
-            </option>
-            <option<?php if ($from === 'Chennai, Kolkata, Mumbai, New Delhi') echo ' selected'; ?>>Chennai, Kolkata,
-                Mumbai, New Delhi
-            </option>
-            <option<?php if ($from === 'Chihuahua, La Paz, Mazatlan') echo ' selected'; ?>>Chihuahua, La Paz, Mazatlan
-            </option>
-            <option<?php if ($from === 'Darwin') echo ' selected'; ?>>Darwin</option>
-            <option<?php if ($from === 'Eastern Time (US & Canada)') echo ' selected'; ?>>Eastern Time (US & Canada)
-            </option>
-            <option<?php if ($from === 'Fiji, Kamchatka, Marshall Is.') echo ' selected'; ?>>Fiji, Kamchatka, Marshall
-                Is.
-            </option>
-            <option<?php if ($from === 'GMT: Dublin, Edinburgh, Lisbon, London') echo ' selected'; ?>>GMT: Dublin,
-                Edinburgh, Lisbon, London
-            </option>
-            <option<?php if ($from === 'Greenland') echo ' selected'; ?>>Greenland</option>
-            <option<?php if ($from === 'Guadalajara, Mexico City, Monterrey') echo ' selected'; ?>>Guadalajara, Mexico
-                City, Monterrey
-            </option>
-            <option<?php if ($from === 'Guam, Port Moresby') echo ' selected'; ?>>Guam, Port Moresby</option>
-            <option<?php if ($from === 'Harare, Pretoria') echo ' selected'; ?>>Harare, Pretoria</option>
-            <option<?php if ($from === 'Hawaii') echo ' selected'; ?>>Hawaii</option>
-            <option<?php if ($from === 'Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius') echo ' selected'; ?>>Helsinki,
-                Kyiv, Riga, Sofia, Tallinn, Vilnius
-            </option>
-            <option<?php if ($from === 'Hobart') echo ' selected'; ?>>Hobart</option>
-            <option<?php if ($from === 'Indiana (East)') echo ' selected'; ?>>Indiana (East)</option>
-            <option<?php if ($from === 'International Date Line West') echo ' selected'; ?>>International Date Line
-                West
-            </option>
-            <option<?php if ($from === 'Irkutsk, Ulaan Bataar') echo ' selected'; ?>>Irkutsk, Ulaan Bataar</option>
-            <option<?php if ($from === 'Islamabad, Karachi, Tashkent') echo ' selected'; ?>>Islamabad, Karachi,
-                Tashkent
-            </option>
-            <option<?php if ($from === 'Jerusalem') echo ' selected'; ?>>Jerusalem</option>
-            <option<?php if ($from === 'Kabul') echo ' selected'; ?>>Kabul</option>
-            <option<?php if ($from === 'Kathmandu') echo ' selected'; ?>>Kathmandu</option>
-            <option<?php if ($from === 'Krasnoyarsk') echo ' selected'; ?>>Krasnoyarsk</option>
-            <option<?php if ($from === 'Kuala Lumpur, Singapore') echo ' selected'; ?>>Kuala Lumpur, Singapore</option>
-            <option<?php if ($from === 'Kuwait, Riyadh, Baghdad') echo ' selected'; ?>>Kuwait, Riyadh, Baghdad</option>
-            <option<?php if ($from === 'Magadan, Solomon Is., New Caledonia') echo ' selected'; ?>>Magadan, Solomon Is.,
-                New Caledonia
-            </option>
-            <option<?php if ($from === 'Manaus') echo ' selected'; ?>>Manaus</option>
-            <option<?php if ($from === 'Mid-Atlantic') echo ' selected'; ?>>Mid-Atlantic</option>
-            <option<?php if ($from === 'Midway Island, Samoa') echo ' selected'; ?>>Midway Island, Samoa</option>
-            <option<?php if ($from === 'Minsk') echo ' selected'; ?>>Minsk</option>
-            <option<?php if ($from === 'Montevideo') echo ' selected'; ?>>Montevideo</option>
-            <option<?php if ($from === 'Moscow, St. Petersburg, Volgograd') echo ' selected'; ?>>Moscow, St. Petersburg,
-                Volgograd
-            </option>
-            <option<?php if ($from === 'Mountain Time (US & Canada)') echo ' selected'; ?>>Mountain Time (US & Canada)
-            </option>
-            <option<?php if ($from === 'Nairobi') echo ' selected'; ?>>Nairobi</option>
-            <option<?php if ($from === 'Newfoundland') echo ' selected'; ?>>Newfoundland</option>
-            <option<?php if ($from === 'Osaka, Sapporo, Tokyo') echo ' selected'; ?>>Osaka, Sapporo, Tokyo</option>
-            <option<?php if ($from === 'Pacific Time (US & Canada)') echo ' selected'; ?>>Pacific Time (US & Canada)
-            </option>
-            <option<?php if ($from === 'Perth') echo ' selected'; ?>>Perth</option>
-            <option<?php if ($from === 'Santiago') echo ' selected'; ?>>Santiago</option>
-            <option<?php if ($from === 'Sarajevo, Skopje, Warsaw, Zagreb') echo ' selected'; ?>>Sarajevo, Skopje,
-                Warsaw,
-                Zagreb
-            </option>
-            <option<?php if ($from === 'Saskatchewan') echo ' selected'; ?>>Saskatchewan</option>
-            <option<?php if ($from === 'Seoul') echo ' selected'; ?>>Seoul</option>
-            <option<?php if ($from === 'Sri Jayawardenapura') echo ' selected'; ?>>Sri Jayawardenapura</option>
-            <option<?php if ($from === 'Taipei') echo ' selected'; ?>>Taipei</option>
-            <option<?php if ($from === 'Tbilisi') echo ' selected'; ?>>Tbilisi</option>
-            <option<?php if ($from === 'Tehran') echo ' selected'; ?>>Tehran</option>
-            <option<?php if ($from === 'Tijuana, Baja California') echo ' selected'; ?>>Tijuana, Baja California
-            </option>
-            <option<?php if ($from === 'Vladivostok') echo ' selected'; ?>>Vladivostok</option>
-            <option<?php if ($from === 'West Central Africa') echo ' selected'; ?>>West Central Africa</option>
-            <option<?php if ($from === 'Windhoek') echo ' selected'; ?>>Windhoek</option>
-            <option<?php if ($from === 'Yakutsk') echo ' selected'; ?>>Yakutsk</option>
-            <option<?php if ($from === 'Yangon (Rangoon)') echo ' selected'; ?>>Yangon (Rangoon)</option>
-            <option<?php if ($from === 'Yekaterinburg') echo ' selected'; ?>>Yekaterinburg</option>
-            <option<?php if ($from === 'Yerevan') echo ' selected'; ?>>Yerevan</option>
+			<?php
+			$qCities = $db_pdo->query("SELECT * FROM zone");
+			while ($row = $qCities->fetch()) {
+				echo "<option";
+				if ($from === $row["city"]) echo ' selected';
+				echo ">" . $row["city"] . "</option>";
+			}
+			?>
         </select>
     </p>
     <p>
         <label for="to">To&nbsp&nbsp&nbsp&nbsp</label>
         <select name="to" id="to">
-            <option<?php if ($to === 'Abu Dhabi, Muscat') echo ' selected'; ?>>Abu Dhabi, Muscat</option>
-            <option<?php if ($to === 'Adelaide') echo ' selected'; ?>>Adelaide</option>
-            <option<?php if ($to === 'Alaska') echo ' selected'; ?>>Alaska</option>
-            <option<?php if ($to === 'Almaty, Novosibirsk') echo ' selected'; ?>>Almaty, Novosibirsk</option>
-            <option<?php if ($to === 'Amman') echo ' selected'; ?>>Amman</option>
-            <option<?php if ($to === 'Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna') echo ' selected'; ?>>
-                Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
-            </option>
-            <option<?php if ($to === 'Arizona') echo ' selected'; ?>>Arizona</option>
-            <option<?php if ($to === 'Astana, Dhaka') echo ' selected'; ?>>Astana, Dhaka</option>
-            <option<?php if ($to === 'Athens, Bucharest, Istanbul') echo ' selected'; ?>>Athens, Bucharest, Istanbul
-            </option>
-            <option<?php if ($to === 'Atlantic Time (Canada)') echo ' selected'; ?>>Atlantic Time (Canada)</option>
-            <option<?php if ($to === 'Auckland, Wellington') echo ' selected'; ?>>Auckland, Wellington</option>
-            <option<?php if ($to === 'Azores') echo ' selected'; ?>>Azores</option>
-            <option<?php if ($to === 'Baku') echo ' selected'; ?>>Baku</option>
-            <option<?php if ($to === 'Bangkok, Hanoi, Jakarta') echo ' selected'; ?>>Bangkok, Hanoi, Jakarta</option>
-            <option<?php if ($to === 'Beijing, Chongqing, Hong Kong, Urumqi') echo ' selected'; ?>>Beijing, Chongqing,
-                Hong Kong, Urumqi
-            </option>
-            <option<?php if ($to === 'Beirut') echo ' selected'; ?>>Beirut</option>
-            <option<?php if ($to === 'Belgrade, Bratislava, Budapest, Ljubljana, Prague') echo ' selected'; ?>>
-                Belgrade, Bratislava, Budapest, Ljubljana, Prague
-            </option>
-            <option<?php if ($to === 'Bogota, Lima, Quito, Rio Branco') echo ' selected'; ?>>Bogota, Lima, Quito, Rio
-                Branco
-            </option>
-            <option<?php if ($to === 'Brasilia') echo ' selected'; ?>>Brasilia</option>
-            <option<?php if ($to === 'Brisbane') echo ' selected'; ?>>Brisbane</option>
-            <option<?php if ($to === 'Brussels, Copenhagen, Madrid, Paris') echo ' selected'; ?>>Brussels, Copenhagen,
-                Madrid, Paris
-            </option>
-            <option<?php if ($to === 'Buenos Aires, Georgetown') echo ' selected'; ?>>Buenos Aires, Georgetown
-            </option>
-            <option<?php if ($to === 'Cairo') echo ' selected'; ?>>Cairo</option>
-            <option<?php if ($to === 'Canberra, Melbourne, Sydney') echo ' selected'; ?>>Canberra, Melbourne, Sydney
-            </option>
-            <option<?php if ($to === 'Cape Verde Is.') echo ' selected'; ?>>Cape Verde Is.</option>
-            <option<?php if ($to === 'Caracas, La Paz') echo ' selected'; ?>>Caracas, La Paz</option>
-            <option<?php if ($to === 'Casablanca, Monrovia, Reykjavik') echo ' selected'; ?>>Casablanca, Monrovia,
-                Reykjavik
-            </option>
-            <option<?php if ($to === 'Central America') echo ' selected'; ?>>Central America</option>
-            <option<?php if ($to === 'Central Time (US & Canada)') echo ' selected'; ?>>Central Time (US & Canada)
-            </option>
-            <option<?php if ($to === 'Chennai, Kolkata, Mumbai, New Delhi') echo ' selected'; ?>>Chennai, Kolkata,
-                Mumbai, New Delhi
-            </option>
-            <option<?php if ($to === 'Chihuahua, La Paz, Mazatlan') echo ' selected'; ?>>Chihuahua, La Paz, Mazatlan
-            </option>
-            <option<?php if ($to === 'Darwin') echo ' selected'; ?>>Darwin</option>
-            <option<?php if ($to === 'Eastern Time (US & Canada)') echo ' selected'; ?>>Eastern Time (US & Canada)
-            </option>
-            <option<?php if ($to === 'Fiji, Kamchatka, Marshall Is.') echo ' selected'; ?>>Fiji, Kamchatka, Marshall
-                Is.
-            </option>
-            <option<?php if ($to === 'GMT: Dublin, Edinburgh, Lisbon, London') echo ' selected'; ?>>GMT: Dublin,
-                Edinburgh, Lisbon, London
-            </option>
-            <option<?php if ($to === 'Greenland') echo ' selected'; ?>>Greenland</option>
-            <option<?php if ($to === 'Guadalajara, Mexico City, Monterrey') echo ' selected'; ?>>Guadalajara, Mexico
-                City, Monterrey
-            </option>
-            <option<?php if ($to === 'Guam, Port Moresby') echo ' selected'; ?>>Guam, Port Moresby</option>
-            <option<?php if ($to === 'Harare, Pretoria') echo ' selected'; ?>>Harare, Pretoria</option>
-            <option<?php if ($to === 'Hawaii') echo ' selected'; ?>>Hawaii</option>
-            <option<?php if ($to === 'Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius') echo ' selected'; ?>>Helsinki,
-                Kyiv, Riga, Sofia, Tallinn, Vilnius
-            </option>
-            <option<?php if ($to === 'Hobart') echo ' selected'; ?>>Hobart</option>
-            <option<?php if ($to === 'Indiana (East)') echo ' selected'; ?>>Indiana (East)</option>
-            <option<?php if ($to === 'International Date Line West') echo ' selected'; ?>>International Date Line
-                West
-            </option>
-            <option<?php if ($to === 'Irkutsk, Ulaan Bataar') echo ' selected'; ?>>Irkutsk, Ulaan Bataar</option>
-            <option<?php if ($to === 'Islamabad, Karachi, Tashkent') echo ' selected'; ?>>Islamabad, Karachi,
-                Tashkent
-            </option>
-            <option<?php if ($to === 'Jerusalem') echo ' selected'; ?>>Jerusalem</option>
-            <option<?php if ($to === 'Kabul') echo ' selected'; ?>>Kabul</option>
-            <option<?php if ($to === 'Kathmandu') echo ' selected'; ?>>Kathmandu</option>
-            <option<?php if ($to === 'Krasnoyarsk') echo ' selected'; ?>>Krasnoyarsk</option>
-            <option<?php if ($to === 'Kuala Lumpur, Singapore') echo ' selected'; ?>>Kuala Lumpur, Singapore</option>
-            <option<?php if ($to === 'Kuwait, Riyadh, Baghdad') echo ' selected'; ?>>Kuwait, Riyadh, Baghdad</option>
-            <option<?php if ($to === 'Magadan, Solomon Is., New Caledonia') echo ' selected'; ?>>Magadan, Solomon Is.,
-                New Caledonia
-            </option>
-            <option<?php if ($to === 'Manaus') echo ' selected'; ?>>Manaus</option>
-            <option<?php if ($to === 'Mid-Atlantic') echo ' selected'; ?>>Mid-Atlantic</option>
-            <option<?php if ($to === 'Midway Island, Samoa') echo ' selected'; ?>>Midway Island, Samoa</option>
-            <option<?php if ($to === 'Minsk') echo ' selected'; ?>>Minsk</option>
-            <option<?php if ($to === 'Montevideo') echo ' selected'; ?>>Montevideo</option>
-            <option<?php if ($to === 'Moscow, St. Petersburg, Volgograd') echo ' selected'; ?>>Moscow, St. Petersburg,
-                Volgograd
-            </option>
-            <option<?php if ($to === 'Mountain Time (US & Canada)') echo ' selected'; ?>>Mountain Time (US & Canada)
-            </option>
-            <option<?php if ($to === 'Nairobi') echo ' selected'; ?>>Nairobi</option>
-            <option<?php if ($to === 'Newfoundland') echo ' selected'; ?>>Newfoundland</option>
-            <option<?php if ($to === 'Osaka, Sapporo, Tokyo') echo ' selected'; ?>>Osaka, Sapporo, Tokyo</option>
-            <option<?php if ($to === 'Pacific Time (US & Canada)') echo ' selected'; ?>>Pacific Time (US & Canada)
-            </option>
-            <option<?php if ($to === 'Perth') echo ' selected'; ?>>Perth</option>
-            <option<?php if ($to === 'Santiago') echo ' selected'; ?>>Santiago</option>
-            <option<?php if ($to === 'Sarajevo, Skopje, Warsaw, Zagreb') echo ' selected'; ?>>Sarajevo, Skopje,
-                Warsaw,
-                Zagreb
-            </option>
-            <option<?php if ($to === 'Saskatchewan') echo ' selected'; ?>>Saskatchewan</option>
-            <option<?php if ($to === 'Seoul') echo ' selected'; ?>>Seoul</option>
-            <option<?php if ($to === 'Sri Jayawardenapura') echo ' selected'; ?>>Sri Jayawardenapura</option>
-            <option<?php if ($to === 'Taipei') echo ' selected'; ?>>Taipei</option>
-            <option<?php if ($to === 'Tbilisi') echo ' selected'; ?>>Tbilisi</option>
-            <option<?php if ($to === 'Tehran') echo ' selected'; ?>>Tehran</option>
-            <option<?php if ($to === 'Tijuana, Baja California') echo ' selected'; ?>>Tijuana, Baja California
-            </option>
-            <option<?php if ($to === 'Vladivostok') echo ' selected'; ?>>Vladivostok</option>
-            <option<?php if ($to === 'West Central Africa') echo ' selected'; ?>>West Central Africa</option>
-            <option<?php if ($to === 'Windhoek') echo ' selected'; ?>>Windhoek</option>
-            <option<?php if ($to === 'Yakutsk') echo ' selected'; ?>>Yakutsk</option>
-            <option<?php if ($to === 'Yangon (Rangoon)') echo ' selected'; ?>>Yangon (Rangoon)</option>
-            <option<?php if ($to === 'Yekaterinburg') echo ' selected'; ?>>Yekaterinburg</option>
-            <option<?php if ($to === 'Yerevan') echo ' selected'; ?>>Yerevan</option>
+			<?php
+			$qCities = $db_pdo->query("SELECT * FROM zone");
+			while ($row = $qCities->fetch()) {
+				echo "<option";
+				if ($to === $row["city"]) echo ' selected';
+				echo ">" . $row["city"] . "</option>";
+			}
+			?>
         </select>
     </p>
     <p>
@@ -447,9 +224,9 @@ if ($_GET['from']) {
         <th>Minute</th>
     </tr>
 	<?php
-	$q = $db_pdo->query("SELECT * FROM zone");
+	$qCities = $db_pdo->query("SELECT * FROM zone");
 
-	while ($row = $q->fetch()) {
+	while ($row = $qCities->fetch()) {
 		echo "<tr><td>" . $row["city"] . "</td><td>" . $row["hour"] . "</td><td>" . $row["minute"] . "</td></tr>\n";
 	}
 	?>
