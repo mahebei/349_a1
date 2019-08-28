@@ -19,7 +19,6 @@
 <body>
 
 <?php
-
 if ($_GET['uName']) {
 	$user_host = '192.168.2.13';
 	$user_name = 'fvision';
@@ -40,9 +39,7 @@ if ($_GET['uName']) {
 }
 echo "</table>";
 ?>
-
 <h1>Time Zone</h1>
-
 <?php
 $db_host = '192.168.2.12';
 $db_name = 'fvision';
@@ -50,7 +47,6 @@ $db_user = 'webuser';
 $db_passwd = 'insecure_db_pw';
 //mysql -h 192.168.2.12 -D fvision -u webuser -p
 $db_pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
-
 $db_pdo = new PDO($db_pdo_dsn, $db_user, $db_passwd);
 
 if ($_GET['from']) {
@@ -60,7 +56,6 @@ if ($_GET['from']) {
 	$min = $_GET['min'];
 }
 ?>
-
 <form method="get">
     <input type="hidden" name="uName" value="<?php echo $_GET['uName'] ?>">
     <p>
@@ -120,31 +115,32 @@ if ($_GET['from']) {
         <button>Enter</button>
     </p>
 </form>
-
 <?php
 if ($_GET['from']) {
 	$toH = $db_pdo->query("SELECT hour FROM zone WHERE city = '$to'")->fetch()[0];
 	$fromH = $db_pdo->query("SELECT hour FROM zone WHERE city = '$from'")->fetch()[0];
 	$toM = $db_pdo->query("SELECT minute FROM zone WHERE city = '$to'")->fetch()[0];
 	$fromM = $db_pdo->query("SELECT minute FROM zone WHERE city = '$from'")->fetch()[0];
-	echo "<p>" . $from . " UTC";
+	echo "<p>" . $from . " UTC ";
 	if ($fromH > 0) echo "+";
 	echo $fromH . ":" . $fromM;
 	if ($fromM === '0') echo "0";
 	echo "</p><p>Time: " . $hour . ":" . $min . "</p>";
 
-	echo "<p>" . $to . " UTC";
-	if ($toH >= 0) echo "+";
+	echo "<p>" . $to . " UTC ";
+	if ($toH > 0) echo "+";
 	echo $toH . ":" . $toM;
 	if ($toM === '0') echo "0";
 	$to = mktime($toH, $toM, 0);
 	$from = mktime($fromH, $fromM, 0);
 	$time = mktime($hour, $min, 0);
 	echo "<p>Time: " . date('H:i', mktime($toH, $toM, 0) - mktime($fromH, $fromM, 0)
-			+ mktime($hour, $min, 0)) . "</p>";
+			+ mktime($hour, $min, 0));
+    if ($toH - $fromH + $hour < 0) echo " -1 day";
+    elseif ($toH - $fromH + $hour >= 24) echo " +1 day";
+	echo "</p>";
 }
 ?>
-
 <p>Showing All Time Zones:</p>
 <table border="1">
     <tr>
@@ -154,7 +150,6 @@ if ($_GET['from']) {
     </tr>
 	<?php
 	$qCities = $db_pdo->query("SELECT * FROM zone");
-
 	while ($row = $qCities->fetch()) {
 		echo "<tr><td>" . $row["city"] . "</td><td>" . $row["hour"] . "</td><td>" . $row["minute"] . "</td></tr>\n";
 	}
