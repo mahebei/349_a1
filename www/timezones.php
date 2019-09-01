@@ -48,7 +48,7 @@ $db_passwd = 'insecure_db_pw';
 //mysql -h 192.168.2.12 -D fvision -u webuser -p
 $db_pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
 $db_pdo = new PDO($db_pdo_dsn, $db_user, $db_passwd);
-
+date_default_timezone_set("Pacific/Auckland");
 if ($_GET['from']) {
 	$from = $_GET['from'];
 	$to = $_GET['to'];
